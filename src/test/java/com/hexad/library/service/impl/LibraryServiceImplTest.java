@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryServiceImplTest {
 
-    LibraryService libraryService=new LibraryServiceImpl();
+    LibraryServiceImpl libraryService=new LibraryServiceImpl();
 
     @BeforeEach
     void resetBookLists(){
