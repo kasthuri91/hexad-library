@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="p-2 mt-5 row ">
+        <div class="col-8">
+            <h1 th:text="${name}"></h1>
+        </div>
+        <div class="col-4">
+            <form th:action="@{/}" method="get">
+                <button type="submit" class="btn btn-secondary mt-3">Home</button>
+            </form>
+        </div>
+    </div>
+    <div class="mt-2 row">
+        <table class="table table-bordered mt-3">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Return</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book : ${bookList}">
+                <td th:text="${book.bookId}"></td>
+                <td th:text="${book.name}"></td>
+                <td th:text="${book.author}"></td>
+                <td><a th:href="@{'/books/return/' + ${book.bookId}}">Return</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script>
+</script>
+
+</html>
